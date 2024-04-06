@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <title>Button Task 2</title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+
+    <body>
+        <div class="container text-center">
+            <div id="head">
+                <h1>Button Task 2</h1>
+            </div><br>
+            <div>
+                <button class="btn" id="btn1" value="red" style="background-color: red;">Button 1</button>
+                <button class="btn" id="btn2" value="green" style="background-color: green;">Button 2</button>
+                <button class="btn" id="btn3" value="yellow" style="background-color: yellow;">Button 3</button><br><br>
+                <button class="btn" onclick="Shuffle()" style="background-color: darkgray;">Rotate</button><br>
+                <strong>Click on rotate button to shuffle the colors</strong>
+            </div>
+        </div>
+        <script>
+            function Shuffle() {
+                const btn1 = document.getElementById('btn1');
+                const btn2 = document.getElementById('btn2');
+                const btn3 = document.getElementById('btn3');
+
+                // Store the current background colors
+                const color1 = btn1.style.backgroundColor;
+                const color2 = btn2.style.backgroundColor;
+                const color3 = btn3.style.backgroundColor;
+
+                // Rotate the colors in a clockwise manner
+                btn1.style.backgroundColor = color3;
+                btn2.style.backgroundColor = color1;
+                btn3.style.backgroundColor = color2;
+
+            }
+        </script>
+    </body>
+
+</html>

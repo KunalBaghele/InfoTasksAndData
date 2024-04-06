@@ -1,0 +1,13 @@
+Create a Grocery store web app using Angular, Java Spring boot and SQL. This Grocery Store will have the following functionalities:
+1. User can add a grocery - (grocery name, grocery type, grocery source, quantity and cost per item, you can add more). 
+{note: Total cost should auto populate according to given details and it should be non-editable}
+2. User can update an existing grocery.
+3. User can delete an existing grocery.
+
+Start screen will show all existing groceries in a list. On click of any grocery, the edit form for that grocery will open, from there the user should be able to edit any data. 
+On the start screen there will be a button "Add New Grocery" that will open an add form to add a new grocery. There should also be an option to delete an individual grocery.
+
+There should be 3 tables in the database
+1. GROCERY_INFO - GROCERY_NAME, COST_PER_ITEM
+2. GROCERY_AMOUNTS - ITEMS_AVAILABLE, TOTAL_COST_OF_ITEMS
+3. GROCERY_SOURCE - Stores names of any 10 states of India, should appear as a dropdown in UI

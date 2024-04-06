@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <title>Min Mul Max Task</title>
+        <link rel="stylesheet" href="../Style.css">
+    </head>
+
+    <body>
+        <div id="container1" class="container text-center">
+            <div id="head">
+                <h1>Min Max Mul Task</h1>
+            </div>
+            <form>
+                <div>
+                    <label class="form-label">Enter Min Value</label>
+                    <input type="text" class="form-control" id="min">
+                </div>
+                <div>
+                    <label class="form-label">Enter Max Value</label>
+                    <input type="text" class="form-control" id="max">
+                </div>
+                <div>
+                    <label class="form-label">Enter Mul Value</label>
+                    <input type="text" class="form-control" id="mul">
+                </div><br>
+                <!-- Creating this div to display error -->
+                <div>
+                    <span id="error"></span>
+                </div><br>
+                <button class="btn btn-primary" onclick="validate()">Validate</button>
+            </form>
+        </div>
+        <script>
+            function validate() {
+                event.preventDefault(); //Prevents page from reloading wen button is clicked
+                const min_val = parseFloat(document.getElementById("min").value);
+                const max_val = parseFloat(document.getElementById("max").value);
+                const mul_val = parseFloat(document.getElementById("mul").value);
+
+                if (isNaN(min_val) != false && isNaN(mul_val) != false && isNaN(max_val) != false) {
+                    //console.log("Not a Number")
+                    document.getElementById("min").style.backgroundColor = "red";
+                    document.getElementById("max").style.backgroundColor = "red";
+                    document.getElementById("mul").style.backgroundColor = "red";
+                    document.getElementById("error").innerHTML = "Input Error..! Enter Numbers only";
+                    return;
+                }
+
+                if (min_val % mul_val == 0 && max_val % mul_val == 0 && mul_val <= min_val && min_val <= max_val && mul_val < max_val) {
+                    //console.log("All condition are true")
+                    document.getElementById("min").style.backgroundColor = "green";
+                    document.getElementById("max").style.backgroundColor = "green";
+                    document.getElementById("mul").style.backgroundColor = "green";
+                    document.getElementById("error").innerHTML = "All Condition are met.";
+                }
+                else {
+                    if ((min_val % mul_val != 0 || max_val % mul_val != 0) && mul_val != 0) { // --->Condition A
+                        //console.log("inside else")
+                        if (min_val % mul_val !== 0) {
+                            //console.log("min not factor of mul")
+                            document.getElementById("min").style.backgroundColor = "red";
+                            document.getElementById("error").innerHTML = "Min not Divisible by Mul";
+                        }
+                        if (max_val % mul_val != 0) {
+                            //console.log("max not factor of mul")
+                            document.getElementById("max").style.backgroundColor = "red";
+                            document.getElementById("error").innerHTML = "Max not Divisible by Mul";
+                        }
+                    }
+                    else if (min_val > max_val) { // --->Condition B
+                        //console.log("Max is smaller than min")
+                        document.getElementById("min").style.backgroundColor = "red";
+                        document.getElementById("error").innerHTML = "Min is greater than Max";
+                    }
+                    else if (mul_val > max_val) { // --->Condition C
+                        //console.log("Mul greater than max")
+                        document.getElementById("mul").style.backgroundColor = "red";
+                        document.getElementById("error").innerHTML = "Mul is greater than Max";
+                    }
+                    else if (mul_val > min_val) { // --->Condition D
+                        //console.log("Mul greater than min")
+                        document.getElementById("mul").style.backgroundColor = "red";
+                        document.getElementById("error").innerHTML = "Mul is greater than Min";
+                    }
+                    else if (min_val % mul_val != 0 && max_val % mul_val != 0 && mul_val == 0) { // --->Condition if mul is 0 and min/max are not factors
+                        //console.log("Mul 0")
+                        document.getElementById("mul").style.backgroundColor = "red";
+                        document.getElementById("error").innerHTML = "Mul is 0 so Min/Max are not Factors";
+                    }
+                }
+            }
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,118 @@
+/* CSS For Button task 1 */
+.btn {
+    border-color: black;
+    width: 120px;
+}
+
+#head {
+    background-color: rgb(110, 242, 87);
+    border-radius: 10px;
+    top: 100px;
+    align-self: center;
+}
+
+.container {
+    text-align: center !important;
+    position: relative;
+    top: 200px;
+    border: 2px solid black;
+    padding: 25px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 5px 5px 5px;
+}
+
+/* CSS for Button task 2 */
+.btn {
+    border-color: black;
+    width: 120px;
+}
+
+#head {
+    background-color: rgb(110, 242, 87);
+    border-radius: 10px;
+    top: 100px;
+    align-self: center;
+}
+
+.container {
+    text-align: center !important;
+    position: relative;
+    top: 200px;
+    border: 2px solid black;
+    padding: 25px;
+    border-radius: 10px;
+    width: 30%;
+    box-shadow: 5px 5px 5px;
+}
+
+/* CSS for Wall Task */
+#head {
+    background-color: rgb(110, 242, 87);
+    border-radius: 10px;
+    top: 100px;
+    align-self: center;
+}
+
+#container1 {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 5px 5px 5px;
+}
+
+#graphContainer {
+    text-align: center;
+    display: none;
+    position: relative;
+    width: 50%;
+    top: 25px;
+    padding: 5px;
+    border: 2px solid black;
+    box-shadow: 5px 5px 5px;
+}
+
+.barContainer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+}
+
+.bar {
+    width: 40px;
+    /* Width of each bar */
+    background-color: rgb(10, 241, 37);
+    margin-right: 5px;
+    /* Space between bars */
+}
+#left {
+    width: 200px;
+    background-color: rgb(213, 184, 240);
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px;
+    border-radius: 5px;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+}
+
+#right {
+    width: 200px;
+    background-color: rgb(213, 184, 240);
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px;
+    border-radius: 5px;
+    padding: 10px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* CSS for Mul Min Max */
